@@ -1,0 +1,36 @@
+services:
+ pulp-main:
+    image: pulp/pulp:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - "./settings/main:/etc/pulp:Z"
+      - "./storage/main:/var/lib/pulp:Z"
+      - "./pg/main/:/var/lib/pgsql:Z"
+    hostname: pulp-main
+
+ pulp-air-gap:
+    image: pulp/pulp:latest
+    ports:
+      - "8081:80"
+    volumes:
+      - "./settings/air-gap:/etc/pulp:Z"
+      - "./storage/air-gap:/var/lib/pulp:Z"
+      - "./pg/air-gap/:/var/lib/pgsql:Z"
+    hostname: pulp-air-gap
+
+ pulp-restore:
+    image: pulp/pulp:latest
+    ports:
+      - "8082:80"
+    volumes:
+      - "./settings/restore:/etc/pulp:Z"
+      - "./storage/restore:/var/lib/pulp:Z"
+      - "./pg/restore/:/var/lib/pgsql:Z"
+    hostname: pulp-restore
+
+ pulp-fixtures:
+   image: pulp/pulp-fixtures
+   ports:
+     - "8083:8080"
+   hostname: pulp-fixtures

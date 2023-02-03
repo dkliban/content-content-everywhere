@@ -1,0 +1,5 @@
+cli/
+storage/
+settings/main/certs/
+settings/air-gap/certs/
+settings/restore/certs/
