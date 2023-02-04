@@ -1,5 +1,5 @@
-set -v
-#set -x
+set +v
+
 echo -e "\nhttp --auth admin:password POST http://localhost:5001/pulp/api/v3/servers/ api_root='/pulp/' base_url='http://host.containers.internal:8080' name='MainPulp' username='admin' password='password'\n"
 read -p "Create an upstream Pulp server configuration in the replica Pulp."
 
