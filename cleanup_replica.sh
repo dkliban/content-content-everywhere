@@ -4,6 +4,10 @@ pulp --profile replica file distribution destroy --name small_repo
 pulp --profile replica file repository destroy --name small_repo
 pulp --profile replica file remote destroy --name small_repo
 
+pulp --profile replica file distribution destroy --name large_repo
+pulp --profile replica file repository destroy --name large_repo
+pulp --profile replica file remote destroy --name large_repo
+
 pulp --profile replica rpm distribution destroy --name zoo
 pulp --profile replica rpm repository destroy --name zoo
 pulp --profile replica rpm remote destroy --name zoo

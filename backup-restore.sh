@@ -35,6 +35,13 @@ read -p "Run pulp-restore container without starting services."
 
 podman-compose run pulp-restore bash
 
+echo -e "\npodman container stop content-content-everywhere_pulp-restore_1\n"
+read -p "Ensure that the container is stopped."
+
+podman container stop content-content-everywhere_pulp-restore_1
+
+echo -e "\npodman container rm content-content-everywhere_pulp-restore_1\n"
+read -p "Remove the container. But keep the volumes for storage and Postgres."
 podman container rm content-content-everywhere_pulp-restore_1
 
 podman-compose up -d
