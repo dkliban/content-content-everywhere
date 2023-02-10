@@ -1,0 +1,7 @@
+compose.yaml - defines all the services (except for the replica)
+
+tart-services.sh - this script runs compose up to start all the services.
+
+create_repos_on_main_pulp.sh - this script creates repositories on 'main-pulp'
+
+export.sh - runs the export/import workflow.
